@@ -35,9 +35,7 @@ addMoviesForm = async (name, description, category, image) => {
   });
 
   //Error;
-  if (!response === 200) {
-    // Reset the form on complete
-    // H.$1("#addMoviesForm").reset();
+  if (response !== 200) {
     throw new Error("HTTP status " + response.status);
   }
   // Show Spinner
