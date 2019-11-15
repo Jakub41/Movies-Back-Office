@@ -28,41 +28,40 @@ const token = btoa(username + ":" + password);
  * @async
  */
 window.request = async (url, params, method = "GET") => {
-    // Options we want to include in the request
-    // As the method like GET, ect
-    // Headers proprieties as Auth
-    const options = {
-        method,
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Basic " + token
-        }
-    };
-    // A check on params if any
-    if (params) {
-        // If it is a get we add query string to url in the form of <domain>/?example=''
-        if (method === "GET") {
-            url += "?" + objectToQueryString(params);
-        } else {
-            // Else not GET we just stringify the params
-            // body should match Content-Type in headers option
-            options.body = JSON.stringify(params);
-        }
+  // Options we want to include in the request
+  // As the method like GET, ect
+  // Headers proprieties as Auth
+  const options = {
+    method,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Basic " + token
     }
-    // Response of the fetch with params
-    const response = await fetch(api + url, options);
-    // Error check
-    if (response.status !== 200) {
-
-        return generateErrorResponse(
-            "The server responded with an unexpected status.",
-            response.status
-        );
+  };
+  // A check on params if any
+  if (params) {
+    // If it is a get we add query string to url in the form of <domain>/?example=''
+    if (method === "GET") {
+      url += "?" + objectToQueryString(params);
+    } else {
+      // Else not GET we just stringify the params
+      // body should match Content-Type in headers option
+      options.body = JSON.stringify(params);
     }
-    // Result JSON OBJ
-    const result = await response.json();
-    // Return the result
-    return result;
+  }
+  // Response of the fetch with params
+  const response = await fetch(api + url, options);
+  // Error check
+  if (response.status !== 200) {
+    return generateErrorResponse(
+      "The server responded with an unexpected status.",
+      response.status
+    );
+  }
+  // Result JSON OBJ
+  const result = await response.json();
+  // Return the result
+  return result;
 };
 /**
  * @function objectToQueryString
@@ -72,31 +71,31 @@ window.request = async (url, params, method = "GET") => {
  * * for example a search query like <domain>/?query="..."
  */
 objectToQueryString = obj => {
-    // converts an object into a query string
-    // ex: {key : 'abc123'} -> &player=abc123
-    return Object.keys(obj)
-        .map(key => key + "=" + obj[key])
-        .join("&");
+  // converts an object into a query string
+  // ex: {key : 'abc123'} -> &player=abc123
+  return Object.keys(obj)
+    .map(key => key + "=" + obj[key])
+    .join("&");
 };
 // Generates the error message if status is not
 // * 200 OK
-generateErrorResponse = (message,response) => {
-    status = response;
-    // We return status + message
-    return {
-        status: status,
-        message
-    };
+generateErrorResponse = (message, response) => {
+  status = response;
+  // We return status + message
+  return {
+    status: status,
+    message
+  };
 };
 /**
-* ! Fetch method to CRUD
-* * We use this to allow from external to interact with the interface
-* * those are public methods under an OBJ {}
-* * called external as Fetch.get() from the method where are need it
+ * ! Fetch method to CRUD
+ * * We use this to allow from external to interact with the interface
+ * * those are public methods under an OBJ {}
+ * * called external as Fetch.get() from the method where are need it
  */
 const Fetch = {
-    get: (url, params) => request(url, params),
-    create: (url, params) => request(url, params, "POST"),
-    update: (url, params) => request(url, params, "PUT"),
-    remove: (url, params) => request(url, params, "DELETE")
+  get: (url, params) => request(url, params),
+  create: (url, params) => request(url, params, "POST"),
+  update: (url, params) => request(url, params, "PUT"),
+  remove: (url, params) => request(url, params, "DELETE")
 };
