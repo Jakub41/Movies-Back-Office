@@ -9,18 +9,18 @@ console.log("Get All Movies...");
  * @param { String } URL
  *
 */
-const getAllMoviesCategory = async () => {
+//const getAllMoviesCategory = async () => {
     // We fetch all Movies GET method
-    const movies = await Fetch.get("/movies/");
+    //const movies = await Fetch.get("/movies/");
     //console.log("Movie Categories...", movies);
-    getMoviesByCategory(movies);
+    //getMoviesByCategory(movies);
     // Return the data
-    return movies;
-};
+    //return movies;
+//};
 
-getMoviesByCategory = async (movies) => {
-    const category = await Fetch.get(`${movies}` + "/Action");
-}
+//getMoviesByCategory = async (movies) => {
+    //const category = await Fetch.get(`${movies}` + "/Action");
+//}
 
 // Init the function
-getAllMoviesCategory();
+//getAllMoviesCategory();

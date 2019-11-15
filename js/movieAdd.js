@@ -36,6 +36,7 @@ addMoviesForm = async (name, description, category, image) => {
 
   //Error;
   if (response !== 200) {
+    H.$1("#addMoviesForm").reset();
     throw new Error("HTTP status " + response.status);
   }
   // Show Spinner
