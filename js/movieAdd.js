@@ -19,8 +19,6 @@ H.$1("#addMoviesForm>.btn").addEventListener("click", e => {
   const category = H.$1("#category").value;
   const description = H.$1("#description").value;
   const image = H.$1("#image").value;
-  // Validate inputs
-  validateName(name);
   // We call the function to POST the data
   addMoviesForm(name, description, category, image);
 });
