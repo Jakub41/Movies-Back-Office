@@ -12,13 +12,15 @@ console.log("Add Movies...");
  *
  */
 // Button click on the form
-H.$1("#addMoviesForm>   .btn").addEventListener("click", e => {
+H.$1("#addMoviesForm>.btn").addEventListener("click", e => {
   e.preventDefault();
   // Values from the form
   const name = H.$1("#name").value;
   const category = H.$1("#category").value;
   const description = H.$1("#description").value;
   const image = H.$1("#image").value;
+  // Validate inputs
+  validateName(name);
   // We call the function to POST the data
   addMoviesForm(name, description, category, image);
 });
