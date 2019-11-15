@@ -42,29 +42,30 @@
                     <a class="nav-link" href="#">My List</a>
                 </li>
             </ul>
-            <!--Insert Dropdown Icon-->
         </div>
     </nav>
 
     <div class="container-fluid">
+        <div id="spinner">
+        </div>
         <h1 class="mb-3">Movies Back Office</h1>
-        <form class="form-inline" id="addMoviesForm">
+        <form role="form" class="form-inline" id="addMoviesForm">
             <label class="sr-only" for="name">Movie Title</label>
             <div class="input-group w-100 mb-3">
                 <input name="name" class="form-control" id="name" placeholder="Movie Title" type="text" required />
             </div>
             <label class="sr-only" for="category">Category</label>
             <div class="input-group w-100 mb-3">
-                <input name="category" class="form-control" id="category" placeholder="Category" type="text" required />
+                <input name="category" class="form-control" id="category" placeholder="Category" type="text" required data-value-missing=”This field is required!” />
             </div>
             <label class="sr-only" for="image">Picture</label>
             <div class="input-group w-100 mb-3">
-                <input name="image" class="form-control" id="image" placeholder="Image URL" type="text" required />
+                <input name="image" class="form-control" id="image" placeholder="Image URL" type="text" required data-value-missing=”This field is required!” />
             </div>
             <label class="sr-only" for="description">Description</label>
             <div class="input-group w-100 mb-3">
                 <textarea name="description" class="form-control" id="description" placeholder="Description" type="text"
-                    rows="4" required></textarea>
+                    rows="4" required data-value-missing=”This field is required!” ></textarea>
             </div>
             <button class="btn btn-success" type="submit"><i class="fas fa-plus"></i></button>
         </form>
@@ -197,7 +198,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="./js/fetchData.js"></script>
+    <script src="./js/helper.js"></script>
+    <script src="./js/fetchData.js"></script>  
+    <script src="./js/getAllMovies.js"></script>  
+    <script src="./js/movieAdd.js"></script>
+    <script src="./js/movieTable.js"></script>
+    <script src="./js/effect.js"></script>
+    <script src="./js/validation.js"></script>
 </body>
 
 </html>
