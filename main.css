@@ -1,86 +1,89 @@
 body {
-    background-color: #bdc3c7;
-  }
-  
-   /* Table Back Office */
-   .table-fixed {
-    width: 100%;
-    background-color: #f3f3f3;
-  }
-  .table-fixed tbody {
-    height: 200px;
-    width: 100%;
-  }
-  .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
-    /* display: block; */
-  }
-  .table-fixed tbody td {
-    /* float: left; */
-  }
-  .table-fixed thead tr th {
-    /* float: left; */
-    background-color: #f39c12;
-    border-color: #e67e22;
-  }
-  
+  background-color: #bdc3c7;
+}
+
+/* Table Back Office */
+.table-fixed {
+  width: 100%;
+  background-color: #f3f3f3;
+}
+.table-fixed tbody {
+  height: 200px;
+  width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  /* display: block; */
+}
+.table-fixed tbody td {
+  /* float: left; */
+}
+.table-fixed thead tr th {
+  /* float: left; */
+  background-color: #f39c12;
+  border-color: #e67e22;
+}
 
 /* Spinner */
 #spinner {
-    visibility: hidden;
-    width: 80px;
-    height: 80px;
+  visibility: hidden;
+  width: 80px;
+  height: 80px;
 
-    border: 2px solid #f3f3f3;
-    border-top: 3px solid #f25a41;
-    border-radius: 100%;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #f25a41;
+  border-radius: 100%;
 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 
-    animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
 
-    z-index: 900;
+  z-index: 900;
 }
 
 #spinner:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 #spinner.show {
-    visibility: visible;
+  visibility: visible;
 }
 
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,130,170,.5),rgba(0,130,170,.5));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 130, 170, 0.5), rgba(0, 130, 170, 0.5));
 }
 
 .delete-movie {
-    color: black;
-    background-color: #f25a41;
+  color: black;
+  background-color: #f25a41;
 }
 
-input{
+input {
   outline: none;
   border: 1px solid black;
 }
@@ -95,8 +98,8 @@ input[data-state="invalid"] {
 }
 
 @media screen and (max-width: 768px) {
-    .card-img-top {
-        width: 100%;
-        height: auto;
-    }
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
 }
