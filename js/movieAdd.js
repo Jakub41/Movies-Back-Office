@@ -12,15 +12,23 @@ console.log("Add Movies...");
  *
  */
 // Button click on the form
-H.$1("#addMoviesForm>.btn").addEventListener("click", e => {
+H.$1("#addMoviesForm>.btn").addEventListener("click", async e => {
   e.preventDefault();
   // Values from the form
   const name = H.$1("#name").value;
   const category = H.$1("#category").value;
   const description = H.$1("#description").value;
   const image = H.$1("#image").value;
-  // We call the function to POST the data
-  addMoviesForm(name, description, category, image);
+
+  // We call the function to POST the data after the validation
+  // We add a new movie or we update a movie
+  if (await validateForm(name, description, category, image)) {
+    if (id == "" && id == null) {
+      await addMoviesForm(name, description, category, image);
+    } else {
+      await updateMoviesForm(id, name, description, category, image);
+    }
+  }
 });
 
 // POST Function
@@ -43,4 +51,5 @@ addMoviesForm = async (name, description, category, image) => {
   showSpinner();
   // Reset the form on complete
   H.$1("#addMoviesForm").reset();
+  getAllMovies();
 };

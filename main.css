@@ -2,33 +2,27 @@ body {
     background-color: #bdc3c7;
   }
   
-  /* Table Back Office */
+   /* Table Back Office */
    .table-fixed {
     width: 100%;
     background-color: #f3f3f3;
   }
   .table-fixed tbody {
     height: 200px;
-    overflow-y: auto;
     width: 100%;
   }
   .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
-    display: block;
+    /* display: block; */
   }
   .table-fixed tbody td {
-    float: left;
+    /* float: left; */
   }
   .table-fixed thead tr th {
-    float: left;
+    /* float: left; */
     background-color: #f39c12;
     border-color: #e67e22;
   }
-
- /* Input validation */ 
   
-  input:invalid {
-    border-color: red;
-}
 
 /* Spinner */
 #spinner {
@@ -81,9 +75,23 @@ body {
     background: linear-gradient(rgba(0,130,170,.5),rgba(0,130,170,.5));
 }
 
-.delete-product {
+.delete-movie {
     color: black;
     background-color: #f25a41;
+}
+
+input{
+  outline: none;
+  border: 1px solid black;
+}
+/* Show green borders when valid */
+input[data-state="valid"] {
+  border: 2px solid hsl(120, 76%, 50%);
+}
+
+/* Show red borders when filled, but invalid */
+input[data-state="invalid"] {
+  border: 3px solid hsl(0, 76%, 50%);
 }
 
 @media screen and (max-width: 768px) {
