@@ -35,7 +35,7 @@ window.request = async (url, params, method = "GET") => {
     method,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Basic " + token
+      "Authorization": "Basic " + token
     }
   };
   // A check on params if any
@@ -72,7 +72,7 @@ window.request = async (url, params, method = "GET") => {
  */
 objectToQueryString = obj => {
   // converts an object into a query string
-  // ex: {key : 'abc123'} -> &player=abc123
+  // ex: {key : 'abc123'} -> &query=abc123
   return Object.keys(obj)
     .map(key => key + "=" + obj[key])
     .join("&");

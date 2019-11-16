@@ -31,9 +31,9 @@ showAllMovies = async (allMovies, movieCard) => {
         <div class="card bg-dark text-white bg-dark h-100 d-flex flex-column" id="${movie._id}">
             <img class="card-img-top" src="${movie.imageUrl}" alt="product">
             <div class="card-block">
-            <h4 class="card-title">${movie.name}</h4>
-            <p class="card-text">${movie.description}</p>
-            <a href="/details" class="btn btn-outline-light btn-sm">Details</a>
+              <h4 class="card-title">${movie.name}</h4>
+              <p class="card-text">${movie.description}</p>
+              <a href="/details" class="btn btn-outline-light btn-sm">Details</a>
             </div>
         </div>
     </div>   
