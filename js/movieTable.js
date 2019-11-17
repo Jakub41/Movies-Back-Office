@@ -1,5 +1,5 @@
 console.log("Movie Back Office Table...");
-
+// We get all the movies to show in the table
 const getAllMovies = async () => {
   H.$1("#movieTable").getElementsByTagName("tbody")[0].innerHTML = "";
 
@@ -9,7 +9,7 @@ const getAllMovies = async () => {
     await showMovies(movies, category);
   });
 };
-
+// We show the movies grouped by category
 showMovies = async (movies, category) => {
   //action
   let moviesSection = H.$1("#movieTable");
@@ -17,9 +17,11 @@ showMovies = async (movies, category) => {
 
   if (movies.length > 0) {
     await showAllMovies(movies, section);
+  } else {
+    section.innerText = "No movies were added";
   }
 };
-
+// We show the movies in the table 
 showAllMovies = async (allMovies, movieCard) => {
   movieCard.innerHTML += allMovies
     .map(

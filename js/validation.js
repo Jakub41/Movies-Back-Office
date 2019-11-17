@@ -1,3 +1,4 @@
+// We validate the fields of thee input
 validateForm = async (name, description, category, image) => {
   if (name == null || name == "") {
     alert("Name can't be blank");
